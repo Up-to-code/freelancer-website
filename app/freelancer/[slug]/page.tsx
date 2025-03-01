@@ -5,96 +5,132 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Star, MapPin, Calendar, CheckCircle, Download, MessageSquare } from "lucide-react"
 
+interface Freelancer {
+  name: string;
+  title: string;
+  location: string;
+  memberSince: string;
+  lastActive: string;
+  rating: number;
+  reviewCount: number;
+  completedProjects: number;
+  hourlyRate: string;
+  image: string;
+  description: string;
+  skills: string[];
+  education: {
+    degree: string;
+    school: string;
+    year: string;
+  }[];
+  certifications: {
+    name: string;
+    issuer: string;
+    year: string;
+  }[];
+  portfolio: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
+  reviews: {
+    name: string;
+    rating: number;
+    date: string;
+    comment: string;
+  }[];
+}
+
 export default function FreelancerProfile({ params }: { params: { slug: string } }) {
-  // In a real app, you would fetch the freelancer data based on the slug
-  const freelancer = {
-    name: "Alex Johnson",
-    title: "Full-Stack Web Developer",
-    location: "San Francisco, CA",
-    memberSince: "January 2020",
-    lastActive: "2 hours ago",
-    rating: 4.9,
-    reviews: 127,
-    completedProjects: 85,
-    hourlyRate: "$45",
-    image: "https://source.unsplash.com/iFgRcqHznqg",
+  const freelancer: Freelancer = {
+    name: "Ahmed Mansour",
+    title: "Full-Stack Developer & UI/UX Designer",
+    location: "Egypt",
+    memberSince: "2018",
+    lastActive: "Just now",
+    rating: 5.0,
+    reviewCount: 150,
+    completedProjects: 120,
+    hourlyRate: "$50",
+    image: "https://x069my5u3k.ufs.sh/f/2FLtVr6zCdoRbTs7k1KmRXDavhSOKYAZI5iGU6lktweLHu0g",
     description:
-      "I'm a full-stack developer with 5+ years of experience specializing in React, Node.js, and MongoDB. I've worked with startups and established companies to build responsive, scalable web applications. My focus is on creating clean, efficient code and delivering projects on time.",
+      "I'm a full-stack developer with expertise in React, Next.js, Firebase, and Node.js. I specialize in building modern web and mobile applications with a focus on performance and UI/UX design. I have worked on various projects, including e-commerce platforms, sales management software, and custom dashboards.",
     skills: [
       "JavaScript",
       "React",
+      "Next.js",
       "Node.js",
-      "Express",
+      "Firebase",
       "MongoDB",
       "TypeScript",
-      "Next.js",
       "GraphQL",
-      "Responsive Design",
-      "UI/UX",
+      "Tailwind CSS",
+      "UI/UX Design",
     ],
     education: [
       {
         degree: "B.S. Computer Science",
-        school: "University of California, Berkeley",
-        year: "2015-2019",
+        school: "Cairo University",
+        year: "2014-2018",
       },
     ],
     certifications: [
       {
-        name: "AWS Certified Developer",
-        issuer: "Amazon Web Services",
+        name: "Google Mobile Web Specialist",
+        issuer: "Google",
         year: "2021",
       },
       {
-        name: "MongoDB Certified Developer",
-        issuer: "MongoDB, Inc.",
-        year: "2020",
+        name: "React Developer Certification",
+        issuer: "Meta",
+        year: "2022",
       },
     ],
     portfolio: [
       {
-        title: "E-commerce Platform",
+        title: "E-commerce Website",
         description:
-          "Built a full-featured e-commerce platform with React, Node.js, and MongoDB. Implemented user authentication, product catalog, shopping cart, and payment processing.",
-        image: "https://source.unsplash.com/vdaJJbls3xE",
+          "Developed a modern e-commerce platform with React, Next.js, and Firebase, featuring seamless payment integration and real-time order tracking.",
+        image: "https://x069my5u3k.ufs.sh/f/2FLtVr6zCdoRK05TW7qB7OUMZtxrCNYPdm1jSLEswGTiIlb2",
       },
       {
-        title: "Real Estate Listing App",
+        title: "Social Media App",
         description:
-          "Developed a responsive web application for real estate listings with advanced search functionality, map integration, and user accounts.",
-        image: "https://source.unsplash.com/jU9VAZDGMzs",
+          "Built a feature-rich social media platform with real-time messaging, notifications, and media uploads using Firebase and React Native.",
+        image: "https://x069my5u3k.ufs.sh/f/2FLtVr6zCdoRAmeQXtkymEZzoMdGi8Tpnwhcv0e4KDJyfabV",
       },
       {
-        title: "Task Management System",
+        title: "Admin Dashboard",
         description:
-          "Created a collaborative task management system with real-time updates, team workspaces, and analytics dashboard.",
-        image: "https://source.unsplash.com/UYsBCu9RP3Y",
+          "Created a custom admin dashboard with analytics, user management, and dynamic charts using React and Recharts.",
+        image: "https://x069my5u3k.ufs.sh/f/2FLtVr6zCdoR0lK4v3DQohwCv8xU3aqilXJ6RNLc5n2frDBH",
       },
     ],
     reviews: [
       {
-        name: "Sarah M.",
+        name: "Omar A.",
         rating: 5,
-        date: "October 15, 2023",
+        date: "February 10, 2024",
         comment:
-          "Alex was fantastic to work with! He understood our requirements perfectly and delivered a beautiful, functional website ahead of schedule. His communication was excellent throughout the project.",
+          "Ahmed delivered an amazing project ahead of schedule. His attention to detail and understanding of UI/UX is top-notch!",
       },
       {
-        name: "Michael T.",
+        name: "Sara M.",
         rating: 5,
-        date: "August 3, 2023",
+        date: "January 5, 2024",
         comment:
-          "Incredible developer who goes above and beyond. Alex not only built exactly what we needed but also suggested improvements that made our application even better. Highly recommended!",
+          "Fantastic developer! Ahmed went above and beyond to ensure our website was perfect. Highly recommended!",
       },
       {
-        name: "Jennifer L.",
-        rating: 4,
-        date: "July 12, 2023",
+        name: "Mohamed K.",
+        rating: 5,
+        date: "December 20, 2023",
         comment:
-          "Great experience working with Alex. He's knowledgeable, responsive, and delivered high-quality work. Would definitely hire again for future projects.",
+          "Professional, talented, and easy to work with. Will definitely hire again!",
       },
     ],
-  }
+  };
+
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -123,7 +159,7 @@ export default function FreelancerProfile({ params }: { params: { slug: string }
                     <div className="flex items-center">
                       <Star className="h-5 w-5 fill-primary text-primary" />
                       <span className="ml-1 font-medium">{freelancer.rating}</span>
-                      <span className="ml-1 text-muted-foreground">({freelancer.reviews} reviews)</span>
+                      <span className="ml-1 text-muted-foreground">({freelancer.reviewCount} reviews)</span>
                     </div>
                     <span className="text-muted-foreground">•</span>
                     <div className="flex items-center gap-1">
@@ -330,4 +366,3 @@ export default function FreelancerProfile({ params }: { params: { slug: string }
     </div>
   )
 }
-
