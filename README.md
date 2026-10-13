@@ -124,4 +124,8 @@ Stay tuned for regular updates and new features!
 
 ---
 
-Made with ❤️ by [Your Name](https://github.com/Up-to-code) 
+Made with ❤️ by [Your Name](https://github.com/Up-to-code)
+
+## Project links
+
+[Source](https://github.com/Up-to-code/freelancer-website) · [Issues](https://github.com/Up-to-code/freelancer-website/issues) · [Public project directory](https://github.com/qentrah/.github/blob/main/profile/PROJECTS.md)
